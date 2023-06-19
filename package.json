@@ -1,0 +1,22 @@
+{
+  "name": "api_server",
+  "version": "1.0.0",
+  "description": "This is the backend server for E-commerce API",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ziggybaba1/ecommerce-lite-api.git"
+  },
+  "keywords": [
+    "Ecommerce"
+  ],
+  "author": "Adejugbagbe Oluwaseyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ziggybaba1/ecommerce-lite-api/issues"
+  },
+  "homepage": "https://github.com/ziggybaba1/ecommerce-lite-api#readme"
+}
