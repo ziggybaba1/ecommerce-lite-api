@@ -1,0 +1,32 @@
+version: "3"
+services:
+    node:
+        build: .
+        ports:
+            - 3000:3000
+        volumes:
+            - ./:/server
+        depends_on:
+            - postgres
+    postgres:
+        image: postgres
+        ports:
+            - 5432:5432
+        volumes:
+            - db-data:/data/postgres-tuto
+        environment:
+            POSTGRES_DB: ${POSTGRES_DB}
+            POSTGRES_USER: ${POSTGRES_USER}
+            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+            PGDATA: ${PGDATA}
+        restart: unless-stopped
+    pgadmin:
+      image: dpage/pgadmin4
+      ports: 
+          - 82:80
+      environment:
+          PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+          PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+volumes:
+    db-data:
+      external: true
